@@ -1,0 +1,34 @@
+# Finance Dashboard
+
+A personal finance tracking application to manage transactions and analyze spending patterns.
+
+## Features (Planned)
+
+- ✅ Add transactions manually
+- ✅ Categorize expenses
+- ✅ View transaction history
+- ✅ Filter and sort transactions
+- ✅ Summary analytics (income, expenses, balance)
+- 🚧 CSV import (coming soon)
+- 🚧 Charts and visualizations (coming soon)
+
+## Tech Stack
+
+**Backend:**
+
+- Node.js
+- Express.js
+- SQLite
+
+**Frontend:**
+
+- React
+- CSS3
+
+## Project Status
+
+🚧 Currently in development - Week 1
+
+## Author
+
+Rahimjon Berdiev
