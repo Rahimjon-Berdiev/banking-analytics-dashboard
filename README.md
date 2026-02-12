@@ -32,10 +32,3 @@ A comprehensive banking analytics dashboard for tracking transactions, analyzing
 ## Author
 
 Rahimjon Berdiev
-
-## Development Timeline
-
-- Week 1: Backend setup and API development
-- Week 2: Database integration
-- Week 3-4: Frontend development
-- Week 5: Deployment and polish
