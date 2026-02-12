@@ -1,6 +1,6 @@
-# Finance Dashboard
+# Banking-Analytics-Dashboard
 
-A personal finance tracking application to manage transactions and analyze spending patterns.
+A comprehensive banking analytics dashboard for tracking transactions, analyzing spending patterns, and managing personal finances.
 
 ## Features (Planned)
 
