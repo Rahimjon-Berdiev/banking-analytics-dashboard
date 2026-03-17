@@ -1,0 +1,231 @@
+.transaction-list {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.transaction-list h2 {
+  margin: 0 0 24px 0;
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transaction-list h2::before {
+  content: '';
+  width: 4px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-light));
+  border-radius: 2px;
+}
+
+.transaction-list table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.transaction-list thead {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+.transaction-list th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.transaction-list th:first-child {
+  border-top-left-radius: var(--radius-md);
+}
+
+.transaction-list th:last-child {
+  border-top-right-radius: var(--radius-md);
+}
+
+.transaction-list td {
+  padding: 20px 16px;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.transaction-list tbody tr {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.transaction-list tbody tr::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--row-accent);
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.transaction-list tbody tr.income {
+  --row-accent: var(--success);
+}
+
+.transaction-list tbody tr.expense {
+  --row-accent: var(--danger);
+}
+
+.transaction-list tbody tr:hover {
+  background: rgba(51, 65, 85, 0.3);
+}
+
+.transaction-list tbody tr:hover::before {
+  transform: scaleY(1);
+}
+
+.transaction-list .amount {
+  font-weight: 700;
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.transaction-list tr.income .amount {
+  color: var(--success);
+}
+
+.transaction-list tr.expense .amount {
+  color: var(--danger);
+}
+
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  border: 1px solid;
+}
+
+.badge.income {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.badge.expense {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+
+.delete-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.delete-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading,
+.error,
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-secondary);
+}
+
+.empty-state {
+  background: rgba(51, 65, 85, 0.2);
+  border-radius: var(--radius-md);
+  border: 2px dashed var(--border-color);
+}
+
+.empty-state p {
+  margin: 12px 0;
+}
+
+.empty-state p:first-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 600;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+
+@media (max-width: 968px) {
+  .transaction-list {
+    padding: 20px;
+    overflow-x: auto;
+  }
+  
+  .transaction-list table {
+    min-width: 700px;
+  }
+  
+  .transaction-list h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .transaction-list {
+    padding: 16px;
+  }
+  
+  .transaction-list th,
+  .transaction-list td {
+    padding: 12px 8px;
+    font-size: 0.875rem;
+  }
+  
+  .transaction-list .amount {
+    font-size: 1rem;
+  }
+}
